@@ -100,4 +100,4 @@ app.config['models_dir'] = '/Users/egorurov/PycharmProjects/backend/models'  # �
 
 if __name__ == '__main__':  # запуск api сервера
     app.register_blueprint(users_blueprint)
-    app.run(Server, Port
+    app.run(Server, Port)
