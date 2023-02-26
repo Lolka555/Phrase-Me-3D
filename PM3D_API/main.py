@@ -96,7 +96,7 @@ def send_recovery_mail(id):
 
 app = Flask(__name__)  # создание flask приложения
 app.config['SECRET_KEY'] = 'secret_key'  # ключ для конфигурации
-app.config['models_dir'] = '/Users/egorurov/PycharmProjects/backend/models'  # путь для хранения моделей
+app.config['models_dir'] = '/Users/egorurov/PycharmProjects/Phrase-Me-3D/PM3D_API/models'  # путь для хранения моделей
 
 if __name__ == '__main__':  # запуск api сервера
     app.register_blueprint(users_blueprint)
