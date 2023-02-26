@@ -79,7 +79,7 @@ def login_user():
             return json.dumps({'status': 'fail', 'message': 'User Not Found'}), 404
         user = session.query(User).filter(User.mail == email).one()
         if not check_password_hash(user.password, password):
-            return json.dumps({'status': 'fail', 'message': 'Incorrect Password '}), 1487
+            return json.dumps({'status': 'fail', 'message': 'Incorrect Password '}), 403
         return json.dumps({'status': 'success', 'message': 'User logined'}), 200
     except TypeError:
         return json.dumps({'status': 'fail', 'message': 'Authorization terminated due to unknown exception'}), 1490
