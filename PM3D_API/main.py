@@ -15,6 +15,7 @@ Server = 'localhost'  # api сервер
 
 
 db_session.global_init("db/data.db")  # подключение к базе данных
+session = db_session.create_session()
 
 users_blueprint = Blueprint(
     'hahaprof_app_api',
@@ -24,7 +25,6 @@ users_blueprint = Blueprint(
 
 @users_blueprint.route('/api/get_all_models', methods=['GET'])  # функция для получения словаря всех моделей
 def get_all_models():
-    session = db_session.create_session()
     models = session.query(Model).values(Model.name, Model.id)
     d = {}
     for name, id in models:
@@ -34,7 +34,6 @@ def get_all_models():
 
 @users_blueprint.route('/api/get_model/<int:id>', methods=['GET'])  # получение модели по id
 def get_model(id):
-    session = db_session.create_session()
     try:
         filename = session.query(Model).filter(Model.id == id).one().file
     except sqlalchemy.exc.NoResultFound:
@@ -51,7 +50,6 @@ def get_model(id):
 @users_blueprint.route('/register/user', methods=['POST'])  # регистрация пользователя в базу данных
 def register_user():
     try:
-        session = db_session.create_session()
         username = request.form['username']
         password = request.form['password']
         hash = generate_password_hash(password)
@@ -72,7 +70,6 @@ def register_user():
 @users_blueprint.route('/login/user', methods=['GET'])  # авторизация пользователя в базу данных
 def login_user():
     try:
-        session = db_session.create_session()
         password = request.args.get('password')
         email = request.args.get('email')
         if session.query(User).filter(User.mail == email).count() == 0:
