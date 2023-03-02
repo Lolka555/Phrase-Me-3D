@@ -3,7 +3,8 @@
 ## How it will be:
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-![ezgif-2-1e4b0d3974](https://user-images.githubusercontent.com/70414732/222424661-636aadd0-8b11-4a5f-8670-4d257db24c7d.gif)
+![ezgif-2-9b3e03b7d7](https://user-images.githubusercontent.com/70414732/222425161-04c1ffc1-55d8-4288-88e3-f894fa387cc4.gif)
+
 
 
 
