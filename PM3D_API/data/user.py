@@ -6,6 +6,7 @@ class User(SqlAlchemyBase):  # таблица пользователей баз�
     __tablename__ = 'user'  # название таблицы
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True, unique=True)  # id пользователя
+    public_id = sqlalchemy.Column(sqlalchemy.String, unique=True)  # публичный токен пользователя
     name = sqlalchemy.Column(sqlalchemy.String, nullable=False, default="", unique=False)  # имя пользователя
     mail = sqlalchemy.Column(sqlalchemy.String, nullable=False, default="", unique=True)  # почта пользователя
     password = sqlalchemy.Column(sqlalchemy.String, nullable=False, default="", unique=False)  # пароль пользователя
