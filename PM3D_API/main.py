@@ -7,7 +7,6 @@ from flask import Flask, abort, send_from_directory
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 import json
-import datetime
 import jwt
 
 
@@ -81,7 +80,6 @@ def login_user():
             return json.dumps({'status': 'fail', 'message': 'Incorrect Password '}), 412
         payload = {
             'user_id': user.public_id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=60*60)
         }
         token = jwt.encode(payload, 'secret_key', algorithm='HS256')
         return json.dumps({'token': token}), 200
