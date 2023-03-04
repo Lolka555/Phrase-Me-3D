@@ -106,4 +106,4 @@ app.config['models_dir'] = '/Users/egor/Desktop/backend-main/models'  # путь
 
 if _name_ == '_main_':  # запуск api сервера
     app.register_blueprint(users_blueprint)
-    app.run(Server, Port, debug=True)
+    app.run(Server, Port, debug=False)
