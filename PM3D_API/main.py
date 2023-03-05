@@ -19,7 +19,7 @@ db_session.global_init("db/data.db")  # подключение к базе да�
 
 users_blueprint = Blueprint(
     'hahaprof_app_api',
-    _name_
+    __name__
 )
 session = db_session.create_session()
 
@@ -99,11 +99,13 @@ def username_by_token():
         return json.dumps({'email': user.mail}), 200
     except Exception:
         return json.dumps({'status': 'fail', 'message': 'Token not found'}), 400
-app = Flask(_name_)  # создание flask приложения
+
+
+app = Flask(__name__)  # создание flask приложения
 app.config['SECRET_KEY'] = "secret_key"  # ключ для конфигурации
 app.config['models_dir'] = '/Users/egor/Desktop/backend-main/models'  # путь для хранения моделей
 
 
-if _name_ == '_main_':  # запуск api сервера
+if __name__ == '_main_':  # запуск api сервера
     app.register_blueprint(users_blueprint)
     app.run(Server, Port, debug=False)
