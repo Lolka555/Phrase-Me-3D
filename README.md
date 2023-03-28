@@ -26,5 +26,5 @@
 1) Открыть PM3D_API скачать requirements.txt
 2) Прописать в терминале по местонахождению файла 'pip install -r requirements.txt'
 3) Заменить в строках 13 и 14 PM3D_API/main.py сервер и порт (стандартные: localhost:8080)
-4) Заменить путь до папки моделей /Users/egorurov/PycharmProjects/Phrase-Me-3D/PM3D_API/models на путь до папки models на вашем компьюторе
+4) Заменить путь до папки моделей на путь до папки models на вашем компьюторе
 5) Запустить main.py 
